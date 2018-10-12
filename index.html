@@ -1,0 +1,196 @@
+<html>
+
+<head>
+    <title>CS 439 Grade Calculator</title>
+
+    <body>
+        <h1>CS 439 Grade Calculator</h1>
+        <form id="query">
+            <table>
+                <tr>
+                    <td>
+                        <label for="iclickerusage">
+                            <span></span>
+                            <input type="text" id="iclicker" placeholder="iClicker Percentage" style="text-align:center" />
+                        </label>
+                    </td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="section">
+                            <span></span>
+                            <input type="text" id="sec" placeholder="Discussion Section Participation" style="text-align:center" />
+                        </label>
+                    </td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj0correctness">
+                            <span></span>
+                            <input type="text" id="proj0corr" placeholder="Project 0 Correctness" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/60</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj0design">
+                            <span></span>
+                            <input type="text" id="proj0design" placeholder="Project 0 Design" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/40</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj1correctness">
+                            <span></span>
+                            <input type="text" id="proj1corr" placeholder="Project 1 Correctness" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj1design">
+                            <span></span>
+                            <input type="text" id="proj1design" placeholder="Project 1 Design" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj2correctness">
+                            <span></span>
+                            <input type="text" id="proj2corr" placeholder="Project 2 Correctness" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj2design">
+                            <span></span>
+                            <input type="text" id="proj2design" placeholder="Project 2 Design" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj3correctness">
+                            <span></span>
+                            <input type="text" id="proj3corr" placeholder="Project 3 Correctness" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj3design">
+                            <span></span>
+                            <input type="text" id="proj3design" placeholder="Project 3 Design" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj4correctness">
+                            <span></span>
+                            <input type="text" id="proj4corr" placeholder="Project 4 Correctness" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="proj4design">
+                            <span></span>
+                            <input type="text" id="proj4design" placeholder="Project 4 Design" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="exam1grade">
+                            <span></span>
+                            <input type="text" id="exam1" placeholder="Exam 1" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/100</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="exam2grade">
+                            <span></span>
+                            <input type="text" id="exam2" placeholder="Exam 2" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/100</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="finalgrade">
+                            <span></span>
+                            <input type="text" id="final" placeholder="Final" style="text-align: center" />
+                        </label>
+                    </td>
+                    <td>/100</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick=calculateGrade() id="submit" class="btn btn-warning" style="margin-top: 20px; margin-bottom: 20px">Calculate</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <div>
+            <p id="grade"></p>
+        </div>
+        <script>
+            function calculateGrade() {
+                document.getElementById("grade").style.visibility = "hidden";
+                var iclicker = parseInt(document.getElementById("iclicker").value);
+                var section = parseInt(document.getElementById("sec").value);
+
+                var proj0corr = parseInt(document.getElementById("proj0corr").value);
+                var proj0design = parseInt(document.getElementById("proj0design").value);
+                var proj0 = proj0design + proj0corr;
+
+                var proj1corr = parseInt(document.getElementById("proj1corr").value);
+                var proj1design = parseInt(document.getElementById("proj1design").value);
+                var proj1 = proj1design + proj1corr;
+
+                var proj2corr = parseInt(document.getElementById("proj2corr").value);
+                var proj2design = parseInt(document.getElementById("proj2design").value);
+                var proj2 = proj2design + proj2corr;
+
+                var proj3corr = parseInt(document.getElementById("proj3corr").value);
+                var proj3design = parseInt(document.getElementById("proj3design").value);
+                var proj3 = proj3design + proj3corr;
+
+                var proj4corr = parseInt(document.getElementById("proj4corr").value);
+                var proj4design = parseInt(document.getElementById("proj4design").value);
+                var proj4 = proj4design + proj4corr;
+
+                var exam1 = parseInt(document.getElementById("exam1").value);
+                var exam2 = parseInt(document.getElementById("exam2").value);
+                var final = parseInt(document.getElementById("final").value);
+
+                var grade = iclicker * 0.05 + section * 0.07 + proj0 * 0.034 + proj1 * 0.068 + proj2 * 0.068 + proj3 * 0.085 + proj4 * 0.085 + exam1 * 0.16 + exam2 * 0.16 + final * 0.22;
+
+                console.log(grade);
+                document.getElementById("grade").innerHTML = grade;
+                document.getElementById("grade").style.visibility = "visible";
+            }
+        </script>
+    </body>
+</head>
+
+</html>
